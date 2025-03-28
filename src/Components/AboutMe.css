@@ -1,0 +1,43 @@
+.aboutme-container {
+    display: flex;
+    gap: 10px; /* Reduced gap between columns */
+    justify-content: space-between;
+    background-color: rgba(0, 0, 51, 0.6); /* Semi-transparent dark blue */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.aboutme-left, .aboutme-right {
+    flex: 1;
+    background-color: rgba(0, 0, 51, 0.7); /* Slightly darker for sections */
+    color: #f0f0f0; /* Light text color */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.aboutme-section-heading {
+    color: #a0c4ff; /* Light blue accent */
+}
+
+.aboutme-left {
+    margin-right: 10px; /* Reduced margin */
+}
+
+.aboutme-right {
+    margin-left: 0; /* Removed unnecessary margin */
+}
+
+a, p, li {
+    color: #e0e0e0; /* Light gray for readability */
+}
+
+@media (max-width: 768px) {
+    .aboutme-container {
+        flex-direction: column;
+        background-color: rgba(0, 0, 51, 0.8); /* Darker on smaller screens */
+    }
+
+    .aboutme-left, .aboutme-right {
+        margin: 0;
+    }
+}
