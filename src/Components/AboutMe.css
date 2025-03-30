@@ -1,5 +1,6 @@
 /* Container for the whole AboutMe section */
 .aboutme-container {
+  height: 95vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -30,14 +31,33 @@
 }
 
 .aboutme-interests-list {
-  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two items in each row */
+  grid-gap: 10px;
+  list-style-type: square;
   padding: 0;
 }
 
 .aboutme-interests-list li {
   font-size: 16px;
   margin: 8px 0;
-  color: #b0b0b0; /* Light gray color */
+  color: #b0b0b0;
+}
+
+.aboutme-interests-list .pair {
+  display: flex;
+  /* justify-content: center; */
+}
+
+.aboutme-interests-list .center {
+  grid-column: span 2;
+  display: flex;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.aboutme-interests-list i {
+  margin-right: 10px; 
 }
 
 /* Right section styles */
@@ -81,6 +101,7 @@
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .aboutme-container {
+    height: auto;
     padding: 20px;
     flex-direction: column; /* Stack sections vertically on small screens */
     align-items: center;

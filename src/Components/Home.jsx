@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
+import VideoBg from '../assets/VideoBG2.mp4'
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
@@ -33,6 +34,7 @@ const Home = () => {
     <div className={`video-container ${loaded ? "loaded" : ""}`}>
       <video
         autoPlay
+        preload="auto"
         loop
         muted
         playsInline
@@ -40,8 +42,8 @@ const Home = () => {
         controlsList="nodownload nofullscreen noremoteplayback"
         className="background-video"
         onContextMenu={(e) => e.preventDefault()}
+        src={VideoBg}
       >
-        <source src="bgpics/8644866-uhd_4096_2160_24fps.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
