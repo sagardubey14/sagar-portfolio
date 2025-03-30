@@ -1,43 +1,131 @@
+/* Container for the whole AboutMe section */
 .aboutme-container {
-    display: flex;
-    gap: 10px; /* Reduced gap between columns */
-    justify-content: space-between;
-    background-color: rgba(0, 0, 51, 0.6); /* Semi-transparent dark blue */
-    padding: 20px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 30px;
+  flex-wrap: wrap; /* Allows sections to wrap to new lines on smaller screens */
 }
 
-.aboutme-left, .aboutme-right {
-    flex: 1;
-    background-color: rgba(0, 0, 51, 0.7); /* Slightly darker for sections */
-    color: #f0f0f0; /* Light text color */
-    padding: 15px;
-    border-radius: 8px;
+/* Left section styles */
+.aboutme-left {
+  width: 45%;
+}
+
+.aboutme-personal-info p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.aboutme-personal-info strong {
+  color: #5e81ac; /* Light blue for the headings */
 }
 
 .aboutme-section-heading {
-    color: #a0c4ff; /* Light blue accent */
+  font-size: 22px;
+  margin-top: 20px;
+  color: #5e81ac; /* Light blue for headings */
+  text-decoration: underline;
 }
 
-.aboutme-left {
-    margin-right: 10px; /* Reduced margin */
+.aboutme-interests-list {
+  list-style-type: none;
+  padding: 0;
 }
 
+.aboutme-interests-list li {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #b0b0b0; /* Light gray color */
+}
+
+/* Right section styles */
 .aboutme-right {
-    margin-left: 0; /* Removed unnecessary margin */
+  width: 45%;
 }
 
-a, p, li {
-    color: #e0e0e0; /* Light gray for readability */
+.aboutme-intro-heading {
+  font-size: 36px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif; /* Unique font for headings */
+  font-weight: bold;
 }
 
+.aboutme-intro-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #d1d1d1; /* Light gray color for text */
+}
+
+/* Add some padding and shadow to the sections */
+.aboutme-left, .aboutme-right {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects */
+.aboutme-left:hover, .aboutme-right:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add a smooth hover effect to the interests */
+.aboutme-interests-list li:hover {
+  color: #5e81ac;
+  cursor: pointer;
+}
+
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-    .aboutme-container {
-        flex-direction: column;
-        background-color: rgba(0, 0, 51, 0.8); /* Darker on smaller screens */
-    }
+  .aboutme-container {
+    padding: 20px;
+    flex-direction: column; /* Stack sections vertically on small screens */
+    align-items: center;
+  }
 
-    .aboutme-left, .aboutme-right {
-        margin: 0;
-    }
+  .aboutme-left, .aboutme-right {
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  .aboutme-intro-heading {
+    font-size: 28px; /* Slightly smaller heading on mobile */
+  }
+
+  .aboutme-intro-text {
+    font-size: 16px; /* Adjusted text size for mobile */
+  }
+
+  .aboutme-personal-info p {
+    font-size: 14px; /* Adjusted text size for smaller screens */
+  }
+
+  .aboutme-section-heading {
+    font-size: 18px; /* Adjusted heading font size */
+  }
+
+  .aboutme-interests-list li {
+    font-size: 14px; /* Adjusted list item font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutme-intro-heading {
+    font-size: 24px; /* Even smaller heading for very small screens */
+  }
+
+  .aboutme-intro-text {
+    font-size: 14px; /* Adjusted text size for very small screens */
+  }
+
+  .aboutme-section-heading {
+    font-size: 16px; /* Adjusted heading font size for very small screens */
+  }
+
+  .aboutme-interests-list li {
+    font-size: 12px; /* Adjusted list item font size */
+  }
 }

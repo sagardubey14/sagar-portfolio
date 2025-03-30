@@ -3,11 +3,29 @@ import "./Home.css";
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
+  const text = "Sagar Dubey";
+
+  useEffect(() => {
+    if(!loaded) return;
+    const interval = setInterval(() => {
+
+        if (index < text.length) {
+            setDisplayedText((prev) => prev + text[index]);
+            setIndex(index + 1);
+        } else {
+            clearInterval(interval);
+        }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [index, text, loaded]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoaded(true);
-    }, 500);
+    }, 600);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -28,7 +46,9 @@ const Home = () => {
       </video>
 
       <div className="intro-text">
-        <h1 className="name">Sagar Dubey</h1>
+        <h1 className="name">
+        {displayedText}
+        </h1>
         <p className="title">Software Developer | UI/UX Enthusiast</p>
       </div>
 
