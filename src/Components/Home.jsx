@@ -52,6 +52,7 @@ const Home = () => {
         {displayedText}
         </h1>
         <p className="title">Software Developer | UI/UX Enthusiast</p>
+        <button className="cta-button">Let’s get started ➤</button>
       </div>
 
       <a
