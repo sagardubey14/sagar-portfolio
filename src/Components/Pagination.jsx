@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./pagination.css";
+import "./Pagination.css";
 
 const Pagination = ({ children, itemsPerPage = 1 }) => {
   const [currentPage, setCurrentPage] = useState(0);
